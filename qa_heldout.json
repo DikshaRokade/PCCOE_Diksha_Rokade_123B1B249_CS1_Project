@@ -1,0 +1,179 @@
+[
+ {
+  "id": "H01",
+  "question": "What is the purpose of the key fob handler component?",
+  "must_contain": [
+   "key fob"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H02",
+  "question": "Tell me the threshold speed at which the doors lock themselves.",
+  "must_contain": [
+   "15"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H03",
+  "question": "Which software component is responsible for storing data in non-volatile memory?",
+  "must_contain": [
+   "SWC_NvmManager"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H04",
+  "question": "How many software components are in the architecture?",
+  "must_contain": [
+   "seven"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H05",
+  "question": "Does the lighting component need the speed signal?",
+  "must_contain": [
+   "VehicleSpeed"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H06",
+  "question": "For how long is the last speed value kept when its checksum is wrong?",
+  "must_contain": [
+   "100 ms"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H07",
+  "question": "Which ECU sends the wheel speed message?",
+  "must_contain": [
+   "ESC"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H08",
+  "question": "How are unsupported diagnostic identifiers handled?",
+  "must_contain": [
+   "0x31"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H09",
+  "question": "Which runnable executes every 50 ms?",
+  "must_contain": [
+   "LightingCtrl_Run50ms"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H10",
+  "question": "Which window function is triggered by holding the key fob for more than two seconds?",
+  "must_contain": [
+   "comfort-close"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H11",
+  "question": "What are the states of the central locking state machine?",
+  "must_contain": [
+   "LOCKED",
+   "UNLOCKED",
+   "SUPERLOCKED"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H12",
+  "question": "Which interface does the PP_DiagData port use?",
+  "must_contain": [
+   "If_DiagData"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H13",
+  "question": "Which component stores the lock state after it changes?",
+  "must_contain": [
+   "SWC_NvmManager"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H14",
+  "question": "In which byte order are the CAN signals transmitted?",
+  "must_contain": [
+   "Motorola"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H15",
+  "question": "Which CAN message carries the lamp command and how often is it sent?",
+  "must_contain": [
+   "BDC_Lamp",
+   "50"
+  ],
+  "evidence": [],
+  "type": "heldout",
+  "answerable": true
+ },
+ {
+  "id": "H16",
+  "question": "What is the maximum payload of a CAN FD frame?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "H17",
+  "question": "Which company manufactures the BDC hardware?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "H18",
+  "question": "What is the over-the-air update procedure for the BDC?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ }
+]

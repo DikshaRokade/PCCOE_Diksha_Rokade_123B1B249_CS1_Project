@@ -1,0 +1,1 @@
+{"timestamp": "2026-10-06T18:26:22", "project": "eval", "embedder": "hash1024", "llm_mode": "extractive", "llm_model": null, "config_hash": "97aca1a26a19ba9f", "retrieval_mode": "hybrid", "top_k": 6, "data_sha": "22c9378bda37d997", "ingest_seconds_2docs": 1.91, "n_questions": 36, "n_heldout": 18, "qa_main_acc": 1.0, "qa_heldout_acc": 0.8, "hybrid_mrr": 0.821}

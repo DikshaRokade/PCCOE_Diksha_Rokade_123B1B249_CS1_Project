@@ -1,0 +1,7 @@
+version,rule,severity,key,message,page,section
+1.0,R1,high,SWC_LightingCtrl.RP_VehicleSpeed,Required port SWC_LightingCtrl.RP_VehicleSpeed has no provider connection,4,4.2 Port Specification
+1.0,R2,high,VehicleSpeed,Signal VehicleSpeed is 8 bit but interface If_VehicleSpeed defines uint16 (16 bit),5,5.1 CAN Signals
+1.0,R3,medium,SWC_ClimateCtrl,SWC_ClimateCtrl is referenced in the text but missing from the component catalogue,6,7.2 FF-02 Speed-Dependent Auto-Lock
+1.0,R4,low,DoorLockStatus,Terminology: 'DoorLockStatus' is very similar to defined name 'DoorLockState',6,7.1 FF-01 Remote Unlock
+1.1,R3,medium,SWC_ClimateCtrl,SWC_ClimateCtrl is referenced in the text but missing from the component catalogue,6,7.2 FF-02 Speed-Dependent Auto-Lock
+1.1,R4,low,DoorLockStatus,Terminology: 'DoorLockStatus' is very similar to defined name 'DoorLockState',6,7.1 FF-01 Remote Unlock

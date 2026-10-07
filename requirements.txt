@@ -1,0 +1,19 @@
+pymupdf==1.28.2
+chromadb==1.5.9
+rank-bm25==0.2.2
+fastapi==0.142.2
+uvicorn==0.54.0
+python-multipart==0.0.32
+streamlit==1.65.0
+requests==2.33.1
+PyYAML==6.0.3
+numpy==2.4.4
+pandas==3.0.2
+# Primary embedding model (downloads BAAI/bge-small-en-v1.5 once from Hugging Face):
+sentence-transformers>=3.0
+# Development / evaluation / report generation:
+pytest==9.1.1
+matplotlib==3.10.8
+reportlab==4.4.10
+python-docx==1.2.0
+httpx==0.28.1

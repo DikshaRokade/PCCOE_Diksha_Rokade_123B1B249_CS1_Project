@@ -1,0 +1,343 @@
+{
+ "doc_id": "BDC-HLD-001",
+ "version": "1.0",
+ "doc_key": "BDC-HLD-001@1.0",
+ "components": [
+  {
+   "name": "SWC_DoorLockMgr",
+   "type": "Application",
+   "responsibility": "Central locking state machine and lock arbitration"
+  },
+  {
+   "name": "SWC_KeyFobHandler",
+   "type": "Application",
+   "responsibility": "Remote key fob command decoding and validation"
+  },
+  {
+   "name": "SWC_WindowCtrl",
+   "type": "Application",
+   "responsibility": "Power window control with anti-pinch protection"
+  },
+  {
+   "name": "SWC_LightingCtrl",
+   "type": "Application",
+   "responsibility": "Exterior lighting and courtesy lamp control"
+  },
+  {
+   "name": "SWC_VehicleSpeedProv",
+   "type": "Application",
+   "responsibility": "Filtered vehicle speed provider"
+  },
+  {
+   "name": "SWC_DiagHandler",
+   "type": "Service",
+   "responsibility": "UDS diagnostic request routing"
+  },
+  {
+   "name": "SWC_NvmManager",
+   "type": "Service",
+   "responsibility": "Non-volatile memory access service"
+  }
+ ],
+ "ports": [
+  {
+   "component": "SWC_KeyFobHandler",
+   "port": "PP_KeyFobCmd",
+   "direction": "P-Port",
+   "interface": "If_KeyFobCmd"
+  },
+  {
+   "component": "SWC_DoorLockMgr",
+   "port": "RP_KeyFobCmd",
+   "direction": "R-Port",
+   "interface": "If_KeyFobCmd"
+  },
+  {
+   "component": "SWC_DoorLockMgr",
+   "port": "RP_VehicleSpeed",
+   "direction": "R-Port",
+   "interface": "If_VehicleSpeed"
+  },
+  {
+   "component": "SWC_DoorLockMgr",
+   "port": "PP_DoorState",
+   "direction": "P-Port",
+   "interface": "If_DoorState"
+  },
+  {
+   "component": "SWC_DoorLockMgr",
+   "port": "RP_NvmAccess",
+   "direction": "R-Port",
+   "interface": "If_NvmAccess"
+  },
+  {
+   "component": "SWC_DoorLockMgr",
+   "port": "PP_DiagData",
+   "direction": "P-Port",
+   "interface": "If_DiagData"
+  },
+  {
+   "component": "SWC_WindowCtrl",
+   "port": "RP_DoorState",
+   "direction": "R-Port",
+   "interface": "If_DoorState"
+  },
+  {
+   "component": "SWC_WindowCtrl",
+   "port": "PP_WindowPos",
+   "direction": "P-Port",
+   "interface": "If_WindowPos"
+  },
+  {
+   "component": "SWC_WindowCtrl",
+   "port": "RP_NvmAccess",
+   "direction": "R-Port",
+   "interface": "If_NvmAccess"
+  },
+  {
+   "component": "SWC_WindowCtrl",
+   "port": "PP_DiagData",
+   "direction": "P-Port",
+   "interface": "If_DiagData"
+  },
+  {
+   "component": "SWC_LightingCtrl",
+   "port": "RP_DoorState",
+   "direction": "R-Port",
+   "interface": "If_DoorState"
+  },
+  {
+   "component": "SWC_LightingCtrl",
+   "port": "RP_VehicleSpeed",
+   "direction": "R-Port",
+   "interface": "If_VehicleSpeed"
+  },
+  {
+   "component": "SWC_LightingCtrl",
+   "port": "PP_LampCmd",
+   "direction": "P-Port",
+   "interface": "If_LampCmd"
+  },
+  {
+   "component": "SWC_VehicleSpeedProv",
+   "port": "PP_VehicleSpeed",
+   "direction": "P-Port",
+   "interface": "If_VehicleSpeed"
+  },
+  {
+   "component": "SWC_DiagHandler",
+   "port": "RP_DiagDoor",
+   "direction": "R-Port",
+   "interface": "If_DiagData"
+  },
+  {
+   "component": "SWC_DiagHandler",
+   "port": "RP_DiagWindow",
+   "direction": "R-Port",
+   "interface": "If_DiagData"
+  },
+  {
+   "component": "SWC_NvmManager",
+   "port": "PP_NvmAccess",
+   "direction": "P-Port",
+   "interface": "If_NvmAccess"
+  }
+ ],
+ "interfaces": [
+  {
+   "name": "If_KeyFobCmd",
+   "kind": "Sender-Receiver",
+   "element": "KeyFobCmd",
+   "datatype": "uint8"
+  },
+  {
+   "name": "If_VehicleSpeed",
+   "kind": "Sender-Receiver",
+   "element": "VehicleSpeed",
+   "datatype": "uint16"
+  },
+  {
+   "name": "If_DoorState",
+   "kind": "Sender-Receiver",
+   "element": "DoorLockState",
+   "datatype": "uint8"
+  },
+  {
+   "name": "If_WindowPos",
+   "kind": "Sender-Receiver",
+   "element": "WindowPosition",
+   "datatype": "uint8"
+  },
+  {
+   "name": "If_LampCmd",
+   "kind": "Sender-Receiver",
+   "element": "LampCmd",
+   "datatype": "uint8"
+  },
+  {
+   "name": "If_NvmAccess",
+   "kind": "Client-Server",
+   "element": "ReadBlock",
+   "datatype": "Std_ReturnType"
+  },
+  {
+   "name": "If_NvmAccess",
+   "kind": "Client-Server",
+   "element": "WriteBlock",
+   "datatype": "Std_ReturnType"
+  },
+  {
+   "name": "If_DiagData",
+   "kind": "Client-Server",
+   "element": "ReadDid",
+   "datatype": "Std_ReturnType"
+  },
+  {
+   "name": "If_DiagData",
+   "kind": "Client-Server",
+   "element": "WriteDid",
+   "datatype": "Std_ReturnType"
+  }
+ ],
+ "signals": [
+  {
+   "name": "KeyFobCmd",
+   "message": "KeyFob_Cmd",
+   "can_id": "0x2A0",
+   "length_bits": 8,
+   "dir": "Rx",
+   "cycle": "Event",
+   "mapped_port": "SWC_KeyFobHandler.PP_KeyFobCmd"
+  },
+  {
+   "name": "VehicleSpeed",
+   "message": "VehSpd_ESC",
+   "can_id": "0x1F0",
+   "length_bits": 8,
+   "dir": "Rx",
+   "cycle": "20",
+   "mapped_port": "SWC_VehicleSpeedProv.PP_VehicleSpeed"
+  },
+  {
+   "name": "DoorLockState",
+   "message": "BDC_Status",
+   "can_id": "0x3B0",
+   "length_bits": 8,
+   "dir": "Tx",
+   "cycle": "100",
+   "mapped_port": "SWC_DoorLockMgr.PP_DoorState"
+  },
+  {
+   "name": "WindowPosition",
+   "message": "BDC_Window",
+   "can_id": "0x3B1",
+   "length_bits": 8,
+   "dir": "Tx",
+   "cycle": "100",
+   "mapped_port": "SWC_WindowCtrl.PP_WindowPos"
+  },
+  {
+   "name": "LampCmd",
+   "message": "BDC_Lamp",
+   "can_id": "0x3B2",
+   "length_bits": 8,
+   "dir": "Tx",
+   "cycle": "50",
+   "mapped_port": "SWC_LightingCtrl.PP_LampCmd"
+  }
+ ],
+ "connections": [
+  {
+   "provider": "SWC_KeyFobHandler.PP_KeyFobCmd",
+   "requirer": "SWC_DoorLockMgr.RP_KeyFobCmd",
+   "purpose": "Forward validated remote commands"
+  },
+  {
+   "provider": "SWC_VehicleSpeedProv.PP_VehicleSpeed",
+   "requirer": "SWC_DoorLockMgr.RP_VehicleSpeed",
+   "purpose": "Auto-lock threshold evaluation"
+  },
+  {
+   "provider": "SWC_DoorLockMgr.PP_DoorState",
+   "requirer": "SWC_WindowCtrl.RP_DoorState",
+   "purpose": "Comfort close"
+  },
+  {
+   "provider": "SWC_DoorLockMgr.PP_DoorState",
+   "requirer": "SWC_LightingCtrl.RP_DoorState",
+   "purpose": "Courtesy lamp control"
+  },
+  {
+   "provider": "SWC_NvmManager.PP_NvmAccess",
+   "requirer": "SWC_DoorLockMgr.RP_NvmAccess",
+   "purpose": "Persist lock state"
+  },
+  {
+   "provider": "SWC_NvmManager.PP_NvmAccess",
+   "requirer": "SWC_WindowCtrl.RP_NvmAccess",
+   "purpose": "Persist window calibration"
+  },
+  {
+   "provider": "SWC_DoorLockMgr.PP_DiagData",
+   "requirer": "SWC_DiagHandler.RP_DiagDoor",
+   "purpose": "Diagnostic data access to door lock data"
+  },
+  {
+   "provider": "SWC_WindowCtrl.PP_DiagData",
+   "requirer": "SWC_DiagHandler.RP_DiagWindow",
+   "purpose": "Diagnostic data access to window data"
+  }
+ ],
+ "constraints": [
+  {
+   "id": "NFR-01",
+   "requirement": "Central lock actuation latency from KeyFobCmd reception",
+   "value": "max 100 ms"
+  },
+  {
+   "id": "NFR-02",
+   "requirement": "Anti-pinch reversal time after pinch detection",
+   "value": "max 50 ms"
+  },
+  {
+   "id": "NFR-03",
+   "requirement": "Auto-lock vehicle speed threshold",
+   "value": "15 km/h"
+  },
+  {
+   "id": "NFR-04",
+   "requirement": "NVM write completion time",
+   "value": "max 20 ms"
+  },
+  {
+   "id": "NFR-05",
+   "requirement": "Courtesy lamp on-time after unlock",
+   "value": "30 s"
+  },
+  {
+   "id": "NFR-06",
+   "requirement": "Vehicle speed signal hold time after CRC failure",
+   "value": "max 100 ms"
+  }
+ ],
+ "dids": [
+  {
+   "did": "0x0100",
+   "name": "DoorLockCounter",
+   "owner": "SWC_DoorLockMgr",
+   "length": "2"
+  },
+  {
+   "did": "0x0101",
+   "name": "LastLockState",
+   "owner": "SWC_DoorLockMgr",
+   "length": "1"
+  },
+  {
+   "did": "0x0200",
+   "name": "WindowCalibStatus",
+   "owner": "SWC_WindowCtrl",
+   "length": "1"
+  }
+ ]
+}

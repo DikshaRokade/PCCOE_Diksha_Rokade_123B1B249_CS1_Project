@@ -1,0 +1,26 @@
+[
+ {
+  "id": "D1",
+  "rule": "R1",
+  "key": "SWC_LightingCtrl.RP_VehicleSpeed",
+  "description": "Required port has no provider connection"
+ },
+ {
+  "id": "D2",
+  "rule": "R2",
+  "key": "VehicleSpeed",
+  "description": "Signal length (8 bit) does not match interface data type uint16"
+ },
+ {
+  "id": "D3",
+  "rule": "R3",
+  "key": "SWC_ClimateCtrl",
+  "description": "Flow FF-02 references a component missing from the catalogue"
+ },
+ {
+  "id": "D4",
+  "rule": "R4",
+  "key": "DoorLockStatus",
+  "description": "Terminology inconsistency: DoorLockStatus vs DoorLockState"
+ }
+]

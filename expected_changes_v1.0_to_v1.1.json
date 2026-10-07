@@ -1,0 +1,12 @@
+[
+ "component:added:SWC_MirrorCtrl",
+ "port:added:SWC_MirrorCtrl.PP_MirrorCmd",
+ "port:added:SWC_MirrorCtrl.RP_DoorState",
+ "interface:added:If_MirrorCmd.MirrorCmd",
+ "signal:added:MirrorCmd",
+ "signal:changed:VehicleSpeed",
+ "connection:added:SWC_DoorLockMgr.PP_DoorState->SWC_MirrorCtrl.RP_DoorState",
+ "connection:added:SWC_VehicleSpeedProv.PP_VehicleSpeed->SWC_LightingCtrl.RP_VehicleSpeed",
+ "constraint:added:NFR-07",
+ "constraint:changed:NFR-03"
+]

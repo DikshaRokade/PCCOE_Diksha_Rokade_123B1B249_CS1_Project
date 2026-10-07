@@ -1,0 +1,15 @@
+version,category,precision,recall,f1,tp,pred,gold
+1.0,components,1.0,1.0,1.0,7,7,7
+1.0,ports,1.0,1.0,1.0,17,17,17
+1.0,interfaces,1.0,1.0,1.0,9,9,9
+1.0,signals,1.0,1.0,1.0,5,5,5
+1.0,connections,1.0,1.0,1.0,8,8,8
+1.0,constraints,1.0,1.0,1.0,6,6,6
+1.0,dids,1.0,1.0,1.0,3,3,3
+1.1,components,1.0,1.0,1.0,8,8,8
+1.1,ports,1.0,1.0,1.0,19,19,19
+1.1,interfaces,1.0,1.0,1.0,10,10,10
+1.1,signals,1.0,1.0,1.0,6,6,6
+1.1,connections,1.0,1.0,1.0,10,10,10
+1.1,constraints,1.0,1.0,1.0,7,7,7
+1.1,dids,1.0,1.0,1.0,3,3,3

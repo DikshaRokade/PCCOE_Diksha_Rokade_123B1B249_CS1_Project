@@ -1,0 +1,21 @@
+# Run from the project root:  docker compose -f Code/docker-compose.yml up --build
+# Optional local LLM: docker compose -f Code/docker-compose.yml --profile llm up   (then: docker exec -it <ollama> ollama pull qwen2.5:7b-instruct)
+services:
+  api:
+    build: {context: .., dockerfile: Code/Dockerfile}
+    ports: ["8000:8000"]
+    volumes: ["hld_data:/data"]
+    environment:
+      HLD_CONFIG: /app/Model_Prompts_Config/config.yaml
+  ui:
+    build: {context: .., dockerfile: Code/Dockerfile}
+    command: ["streamlit", "run", "/app/Code/app/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports: ["8501:8501"]
+    environment: {HLD_API_URL: "http://api:8000"}
+    depends_on: [api]
+  ollama:
+    image: ollama/ollama
+    profiles: ["llm"]
+    ports: ["11434:11434"]
+    volumes: ["ollama:/root/.ollama"]
+volumes: {hld_data: {}, ollama: {}}

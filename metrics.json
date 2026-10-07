@@ -1,0 +1,222 @@
+{
+ "run": {
+  "timestamp": "2026-10-06T18:26:22",
+  "project": "eval",
+  "embedder": "hash1024",
+  "llm_mode": "extractive",
+  "llm_model": null,
+  "config_hash": "97aca1a26a19ba9f",
+  "retrieval_mode": "hybrid",
+  "top_k": 6,
+  "data_sha": "22c9378bda37d997",
+  "ingest_seconds_2docs": 1.91,
+  "n_questions": 36,
+  "n_heldout": 18
+ },
+ "retrieval_ablation": {
+  "bm25": {
+   "hit@1": 0.645,
+   "hit@3": 0.935,
+   "hit@6": 0.968,
+   "mrr": 0.798,
+   "evidence_recall@6": 0.968
+  },
+  "dense": {
+   "hit@1": 0.71,
+   "hit@3": 0.839,
+   "hit@6": 0.935,
+   "mrr": 0.783,
+   "evidence_recall@6": 0.935
+  },
+  "hybrid": {
+   "hit@1": 0.742,
+   "hit@3": 0.903,
+   "hit@6": 0.968,
+   "mrr": 0.821,
+   "evidence_recall@6": 0.968
+  }
+ },
+ "qa_main": {
+  "n": 36,
+  "answer_accuracy": 1.0,
+  "false_abstention_rate": 0.0,
+  "oos_abstention_rate": 1.0,
+  "avg_groundedness": 0.982,
+  "citation_validity_rate": 1.0,
+  "citation_correct_rate": 1.0,
+  "latency_mean_s": 0.009,
+  "latency_p95_s": 0.009,
+  "accuracy_by_type": {
+   "fact": 1.0,
+   "relation": 1.0,
+   "list": 1.0,
+   "flow": 1.0
+  }
+ },
+ "qa_heldout": {
+  "n": 18,
+  "answer_accuracy": 0.8,
+  "false_abstention_rate": 0.133,
+  "oos_abstention_rate": 1.0,
+  "avg_groundedness": 1.0,
+  "citation_validity_rate": 1.0,
+  "citation_correct_rate": 0.8,
+  "latency_mean_s": 0.008,
+  "latency_p95_s": 0.01,
+  "accuracy_by_type": {
+   "heldout": 0.8
+  }
+ },
+ "extraction": {
+  "micro": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "tp": 118,
+   "pred": 118,
+   "gold": 118
+  },
+  "per_category": {
+   "1.0:components": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 7,
+    "pred": 7,
+    "gold": 7
+   },
+   "1.0:ports": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 17,
+    "pred": 17,
+    "gold": 17
+   },
+   "1.0:interfaces": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 9,
+    "pred": 9,
+    "gold": 9
+   },
+   "1.0:signals": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 5,
+    "pred": 5,
+    "gold": 5
+   },
+   "1.0:connections": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 8,
+    "pred": 8,
+    "gold": 8
+   },
+   "1.0:constraints": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 6,
+    "pred": 6,
+    "gold": 6
+   },
+   "1.0:dids": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 3,
+    "pred": 3,
+    "gold": 3
+   },
+   "1.1:components": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 8,
+    "pred": 8,
+    "gold": 8
+   },
+   "1.1:ports": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 19,
+    "pred": 19,
+    "gold": 19
+   },
+   "1.1:interfaces": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 10,
+    "pred": 10,
+    "gold": 10
+   },
+   "1.1:signals": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 6,
+    "pred": 6,
+    "gold": 6
+   },
+   "1.1:connections": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 10,
+    "pred": 10,
+    "gold": 10
+   },
+   "1.1:constraints": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 7,
+    "pred": 7,
+    "gold": 7
+   },
+   "1.1:dids": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 3,
+    "pred": 3,
+    "gold": 3
+   }
+  }
+ },
+ "consistency_checks": {
+  "1.0": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "tp": 4,
+   "pred": 4,
+   "gold": 4,
+   "flagged_total": 4
+  },
+  "1.1": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "tp": 2,
+   "pred": 2,
+   "gold": 2,
+   "flagged_total": 2
+  }
+ },
+ "revision_comparison": {
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "tp": 10,
+  "pred": 10,
+  "gold": 10
+ }
+}

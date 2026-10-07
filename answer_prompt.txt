@@ -1,0 +1,6 @@
+Question: {question}
+
+Sources:
+{sources}
+
+Answer using only the sources above. Cite every sentence with [S#].

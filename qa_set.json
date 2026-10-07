@@ -1,0 +1,428 @@
+[
+ {
+  "id": "Q01",
+  "question": "What does SWC_DoorLockMgr do?",
+  "must_contain": [
+   "central locking",
+   "state machine"
+  ],
+  "evidence": [
+   "central locking state machine"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q02",
+  "question": "At what vehicle speed does auto-lock trigger?",
+  "must_contain": [
+   "15 km/h"
+  ],
+  "evidence": [
+   "exceeds 15 km/h"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q03",
+  "question": "Which component provides VehicleSpeed?",
+  "must_contain": [
+   "SWC_VehicleSpeedProv"
+  ],
+  "evidence": [
+   "provides the filtered vehicle speed"
+  ],
+  "type": "relation",
+  "answerable": true
+ },
+ {
+  "id": "Q04",
+  "question": "What ports does SWC_WindowCtrl have?",
+  "must_contain": [
+   "RP_DoorState",
+   "PP_WindowPos",
+   "RP_NvmAccess",
+   "PP_DiagData"
+  ],
+  "evidence": [
+   "component: swc_windowctrl; port:"
+  ],
+  "type": "list",
+  "answerable": true
+ },
+ {
+  "id": "Q05",
+  "question": "Which components consume DoorLockState?",
+  "must_contain": [
+   "SWC_WindowCtrl",
+   "SWC_LightingCtrl"
+  ],
+  "evidence": [
+   "interface: if_doorstate"
+  ],
+  "type": "relation",
+  "answerable": true
+ },
+ {
+  "id": "Q06",
+  "question": "How fast must the anti-pinch function reverse the window?",
+  "must_contain": [
+   "50 ms"
+  ],
+  "evidence": [
+   "within 50 ms of pinch detection"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q07",
+  "question": "What is the CAN ID of the BDC_Status message?",
+  "must_contain": [
+   "0x3B0"
+  ],
+  "evidence": [
+   "can message: bdc_status; can id: 0x3b0"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q08",
+  "question": "What is the cycle time of the VehSpd_ESC message?",
+  "must_contain": [
+   "20"
+  ],
+  "evidence": [
+   "can message: vehspd_esc"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q09",
+  "question": "How long is the courtesy lamp on after unlock?",
+  "must_contain": [
+   "30"
+  ],
+  "evidence": [
+   "switched on for 30 seconds"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q10",
+  "question": "Which NVM blocks does SWC_NvmManager manage?",
+  "must_contain": [
+   "LockStateBlock",
+   "WindowCalibBlock",
+   "DtcBlock"
+  ],
+  "evidence": [
+   "manages three nvm blocks"
+  ],
+  "type": "list",
+  "answerable": true
+ },
+ {
+  "id": "Q11",
+  "question": "What NRC is returned for an unsupported data identifier?",
+  "must_contain": [
+   "0x31"
+  ],
+  "evidence": [
+   "negative response code (nrc) 0x31"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q12",
+  "question": "Which DID is owned by SWC_WindowCtrl?",
+  "must_contain": [
+   "0x0200"
+  ],
+  "evidence": [
+   "owner component: swc_windowctrl"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q13",
+  "question": "What is the data type of the VehicleSpeed element?",
+  "must_contain": [
+   "uint16"
+  ],
+  "evidence": [
+   "data element / operation: vehiclespeed"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q14",
+  "question": "What is the resolution of the vehicle speed value?",
+  "must_contain": [
+   "0.01"
+  ],
+  "evidence": [
+   "resolution of 0.01 km/h"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q15",
+  "question": "Which diagnostic services does SWC_DiagHandler support?",
+  "must_contain": [
+   "0x22",
+   "0x2E"
+  ],
+  "evidence": [
+   "supports the services"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q16",
+  "question": "What happens when the rolling-code counter is invalid?",
+  "must_contain": [
+   "discard"
+  ],
+  "evidence": [
+   "discards commands with an invalid counter"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q17",
+  "question": "When does the comfort-close function operate?",
+  "must_contain": [
+   "2 seconds"
+  ],
+  "evidence": [
+   "comfort-close function raises all windows"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q18",
+  "question": "What is the turn indicator flash frequency?",
+  "must_contain": [
+   "1.5 hz"
+  ],
+  "evidence": [
+   "turn indicators flash at 1.5 hz"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q19",
+  "question": "How many bytes is the DtcBlock?",
+  "must_contain": [
+   "64"
+  ],
+  "evidence": [
+   "dtcblock (64 bytes)"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q20",
+  "question": "Which runnable does SWC_KeyFobHandler execute and at what period?",
+  "must_contain": [
+   "KeyFobHandler_Run20ms",
+   "20 ms"
+  ],
+  "evidence": [
+   "runnable keyfobhandler_run20ms executes every 20 ms"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q21",
+  "question": "List the steps of the remote unlock flow.",
+  "must_contain": [
+   "rolling-code",
+   "NvmManager"
+  ],
+  "evidence": [
+   "step 2:"
+  ],
+  "type": "flow",
+  "answerable": true
+ },
+ {
+  "id": "Q22",
+  "question": "Who is the requirer of SWC_NvmManager.PP_NvmAccess?",
+  "must_contain": [
+   "SWC_DoorLockMgr",
+   "SWC_WindowCtrl"
+  ],
+  "evidence": [
+   "provider port: swc_nvmmanager.pp_nvmaccess"
+  ],
+  "type": "relation",
+  "answerable": true
+ },
+ {
+  "id": "Q23",
+  "question": "What is the maximum latency from key fob command to lock actuation?",
+  "must_contain": [
+   "100 ms"
+  ],
+  "evidence": [
+   "central lock actuation latency"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q24",
+  "question": "How long does an NVM write take to complete?",
+  "must_contain": [
+   "20 ms"
+  ],
+  "evidence": [
+   "a write completes within 20 ms"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q25",
+  "question": "What happens if the vehicle speed CRC fails?",
+  "must_contain": [
+   "last valid value",
+   "100 ms"
+  ],
+  "evidence": [
+   "failed crc are replaced"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q26",
+  "question": "What AUTOSAR release is the BDC software based on?",
+  "must_contain": [
+   "R22-11"
+  ],
+  "evidence": [
+   "release r22-11"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q27",
+  "question": "Which interface type is If_NvmAccess?",
+  "must_contain": [
+   "client-server"
+  ],
+  "evidence": [
+   "interface: if_nvmaccess"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q28",
+  "question": "Which components does SWC_DoorLockMgr depend on?",
+  "must_contain": [
+   "SWC_KeyFobHandler",
+   "SWC_VehicleSpeedProv",
+   "SWC_NvmManager"
+  ],
+  "evidence": [
+   "requirer port: swc_doorlockmgr."
+  ],
+  "type": "relation",
+  "answerable": true
+ },
+ {
+  "id": "Q29",
+  "question": "Which CAN message carries LampCmd?",
+  "must_contain": [
+   "BDC_Lamp"
+  ],
+  "evidence": [
+   "signal: lampcmd"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q30",
+  "question": "What is the direction of the KeyFobCmd signal?",
+  "must_contain": [
+   "Rx"
+  ],
+  "evidence": [
+   "signal: keyfobcmd"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "Q31",
+  "question": "What is the CAN bit rate used by the BDC?",
+  "must_contain": [
+   "500 kbit/s"
+  ],
+  "evidence": [
+   "bit rate of 500 kbit/s"
+  ],
+  "type": "fact",
+  "answerable": true
+ },
+ {
+  "id": "O01",
+  "question": "What is the maximum torque of the engine in the vehicle?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "O02",
+  "question": "Who is the CEO of Bosch?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "O03",
+  "question": "What is the tyre pressure monitoring threshold?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "O04",
+  "question": "Describe the ADAS lane keeping algorithm.",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ },
+ {
+  "id": "O05",
+  "question": "What is the battery capacity?",
+  "must_contain": [],
+  "evidence": [],
+  "type": "out_of_scope",
+  "answerable": false
+ }
+]
